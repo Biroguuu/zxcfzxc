@@ -1,0 +1,59 @@
+#include <iostream>
+#include <conio.h> 
+#include <iomanip>
+
+using namespace std; 
+
+int main()
+{
+	int i,factorial,sum; 
+	char choice; 
+
+	// input
+	cout << "================================================================================\n";
+	cout << "Please input a number for factorial operation : "; cin >> i; 
+	// factorial operation
+	for (; i > 0 ;--i) 
+		{
+			
+			factorial = i * (i-1);
+			sum = factorial;
+			factorial = sum * i;
+
+		cout << "the factorial is: " << sum << endl;
+		}
+
+	//continue choice
+	cout << "Do you want to continue? (Y/N)  : "; cin >> choice; 
+	
+	switch (choice)
+	{
+		case 'Y': 
+		case 'y': 
+		{
+			cout << "================================================================================\n";
+			cout << "Please input a number for factorial operation : "; cin >> i; 
+			for (; i > 0 ;--i) 
+			{
+			
+			factorial = i * (i-1);
+			sum = factorial;
+			factorial = sum * factorial;
+
+				cout << "the factorial is: " << sum << endl;
+			}
+			cout << "Do you want to continue? (Y/N)  : "; cin >> choice;	
+		}
+		break;
+
+		default: cout << "the program will now exit.";
+	}
+
+
+_getch();
+
+return 0; 
+
+
+}
+
