@@ -1,0 +1,33 @@
+#include <iostream>
+#include <conio.h>
+#include <cstring>
+using namespace std; 
+
+int main()
+{
+   
+   //total number of names that you want to store
+int size;
+cin >> size;
+ 
+//dynamically making array of exact size that we need
+string *names = new string [size];
+ 
+//take input each name one by one
+for(int i=0; i<size; i++)
+{
+	
+		cin >> names[i];
+}
+
+for (int i = 0; i < size; i++)
+
+cout << i+1 << ".) "<< names[i] << endl; 
+
+
+	
+	_getch();
+	
+	return 0;
+	 
+}
