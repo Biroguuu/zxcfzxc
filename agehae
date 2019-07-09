@@ -1,0 +1,83 @@
+/******************************************************/
+/* File: Mileage Counter                              */
+/*                                                    */
+/* Created by: Jason Beers                            */
+/* Date: December 12, 2010                            */
+/*                                                    */
+/* Program to take monthly mileage amounts and        */
+/*   provide the average and annual amounts           */
+/*                                                    */
+/* Inputs: (keyboard)                                 */
+/*   12 months of milage data (Monthly)               */
+/*                                                    */
+/* Output:                                            */
+/*   Monthly Average & Annual Amounts (Avg & Annual)  */
+/*                                                    */
+/*                                                    */
+/******************************************************/
+
+#include "StdAfx.h"
+
+using namespace std ;
+
+#include <iostream>
+
+#include <string>
+
+void Intro()  // Intro to the program
+{
+	cout << " " << endl ;
+	cout << "******************************************" << endl ;
+	cout << "*                                        *" << endl ;
+	cout << "*            Welcome Drivers!            *" << endl ;
+	cout << "*                                        *" << endl ;
+	cout << "*  This program is designed to provide   *" << endl ;
+	cout << "*  you with the total amount of miles    *" << endl ;
+	cout << "*   driven for a year as well as the     *" << endl ;
+	cout << "*    average miles driven per month.     *" << endl ;
+	cout << "*    Just enter the miles you drove      *" << endl ;
+	cout << "*     for the last 12 months below.      *" << endl ;
+	cout << "*                                        *" << endl ;
+	cout << "******************************************" << endl ;	
+	cout << " " << endl ;
+	cout << " " << endl ;
+}
+int main()
+{
+  
+        string monthName[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"} ;  // Array to store month names
+	double monthAmt[12] ;  // Array to store monthly amounts
+	double Annual = 0 ;  // variable to find total annual amount
+	double Avg = 0 ;  // variable to find average monthly mileage
+	int M ;  // variable to perform the loop
+	char Restart ; // variable allowing the user to restart the program if desired
+
+	Intro () ;  // Writes the Intro into the program
+
+	for (M=0; M<12; M++)
+	    {
+		cout << "Enter mileage for " << monthName[M] << ":" ;  // Creates the 12 monthly input lines
+                cin >> monthAmt[M] ;
+		Annual = Annual + monthAmt[M] ;
+	    }
+
+	Avg = Annual / 12 ;  // Calculates the average amount of miles driven for the year
+	
+	cout << " " << endl ;
+	cout << " " << endl ;
+	cout << "You drove " << Annual << " miles for the year " << endl ;  // displays the total miles driven
+	cout << " " << endl ;
+	cout << "You averaged " << Avg << " miles per month " << endl ;  // displays the average miles driven
+	cout << " " << endl ;
+	
+	cout << "Would you like to run this program again? (enter 'y' for Yes; 'n' for No): " ; // Asks for restart or exit
+	cin >> Restart ;
+		if (Restart == 'y' || Restart == 'Y')  // Allows for lower or upper case letter
+			{
+			main () ;  // Rerun the program
+			}
+		else
+			{
+			return (0) ;  // Exit the program
+			}
+}
