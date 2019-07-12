@@ -1,0 +1,65 @@
+#include <iostream> 
+#include <conio.h>
+
+using namespace std; 
+
+int main()
+{
+	//declaration of variables
+	int num[100];
+	int size,temp; 
+	char choice; 
+
+	cout << "Please enter how many you want to sort in ASCENDING order : "; cin >> size; 
+	cout << "===============================================================================\n";
+	cout << endl << endl; 
+
+	// input using for-loop
+	for (int x = 0; x < size; x++)
+	{
+		cout << "Enter a number: "; cin >> num[x];
+	}
+
+	//output code for sorting
+
+	for (int x=0; x < size; x++) 
+	{
+		for ( int y = 0; y < size - 1 ; y++)
+		{
+			if( num[y] > num[y+1]) 
+			{
+			temp = num[y];
+			num[y] = num[y+1];
+			num[y+1] = temp; 
+			}
+		}	
+	}
+
+	// output 
+	cout << "The Sorted Numbers Are: \n";
+		for ( int x = 0; x < size; x++) 
+		{
+			cout << num[x] << ", ";
+		}
+	//choice to repeat the program
+	cout << endl << endl; 
+	cout << "\n Do you want to try again? (Y/N) : "; cin >> choice; 
+	if (choice == 'Y' || choice == 'y') 
+	{
+		cout << "===============================================================================\n";
+		//to repeat the whole main function 
+		main(); 
+	}
+
+	else 
+		cout << "Thank you for using this program!";
+
+
+
+
+	_getch();
+
+
+	return 0; 
+
+}
